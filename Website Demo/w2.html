@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Results</title>
+</head>
+
+<body>
+
+    <h2>We have received Feedback!</h2>
+
+    <p><span id="firstname"></span> <span id="surname"></span> gave answers to my questions</p>
+    
+    <p>Photo(s) liked: <span id="photo1"></span> <span id="photo2"></span> <span id="photo3"></span></p>
+
+    <p>The most favourite British wildlife animal is <span id="favourite"></span>.</p>
+    
+    
+    <!-- JavaScript -->
+    <script>
+        // read all data from URL //
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        const fname = urlParams.get('Firstname')
+        document.getElementById("firstname").innerHTML = fname;
+
+        const sname = urlParams.get('Surname')
+        document.getElementById("surname").innerHTML = sname;
+
+        const p1 = urlParams.get('Photo1')
+        document.getElementById("photo1").innerHTML = p1;
+        const p2 = urlParams.get('Photo2')
+        document.getElementById("photo2").innerHTML = p2;
+        const p3 = urlParams.get('Photo3')
+        document.getElementById("photo3").innerHTML = p3;
+ 
+        const fave = urlParams.get('Favourite')
+        document.getElementById('favourite').innerHTML = fave;
+
+    </script>
+
+</body>
+
+</html>
